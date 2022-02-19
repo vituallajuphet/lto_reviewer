@@ -11,13 +11,12 @@ const Routes = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        screenOptions={{
-          headerShown: false,
-        }}
         initialRouteName={!isStarted ? 'Loading' : 'Home'}>
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Loading" component={Loading} />
-        <Stack.Screen name="OptionScreen" component={OptionScreen} />
+        <Stack.Screen options={{ headerShown: true, headerBackVisible: false , title: 'LTO Exam Reviewer'}}
+          name="Home" component={Home}
+        />
+        <Stack.Screen options={{headerShown: false}} name="Loading" component={Loading} />
+        <Stack.Screen options={{title: 'Option'}} name="OptionScreen" component={OptionScreen} />
         <Stack.Screen name="Exam" component={ExamScreen} />
       </Stack.Navigator>
     </NavigationContainer>
