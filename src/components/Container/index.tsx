@@ -4,7 +4,7 @@ import {ContainerProps} from './types';
 import {styles} from './styles';
 import {getStyles} from '../../utils';
 
-const Container: React.FC<ContainerProps> = ({children, padding = 20}) => {
+const Container: React.FC<ContainerProps> = ({children, padding = 20, ...args}) => {
   return (
     <>
       <View style={getStyles(styles.contStyles, {padding: padding})}>

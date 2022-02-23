@@ -1,7 +1,17 @@
 import { Image, Text, View, ScrollView } from "react-native";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, ButtonGroup, Container, Dialog } from "../../components";
 import { st } from "./style";
+import Icon from "react-native-vector-icons/FontAwesome";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  getExamState,
+  setCategory,
+  setNumberOfItems,
+  setTestType,
+  startExam,
+} from "../../store/reducers/examReducer";
+import { batchDispatch } from "../../utils";
 
 interface IGroupBtnProps {
   title: string;
@@ -10,15 +20,12 @@ interface IGroupBtnProps {
 
 const Home = ({ navigation }: any) => {
   const [modalShown, setModal] = useState(false);
-
-  const pressHandler = (...args: any) => {
-    console.log(args);
-  };
+  const dispatch = useDispatch();
 
   const btnGroupData: IGroupBtnProps[] = [
-    { title: "40", onPress: () => pressHandler(40) },
-    { title: "60", onPress: () => pressHandler(60) },
-    { title: "80", onPress: () => pressHandler(80) },
+    { title: "40", onPress: () => dispatch(setNumberOfItems(40)) },
+    { title: "60", onPress: () => dispatch(setNumberOfItems(60)) },
+    { title: "80", onPress: () => dispatch(setNumberOfItems(80)) },
   ];
 
   return (
@@ -38,6 +45,9 @@ const Home = ({ navigation }: any) => {
           <ScrollView>
             <Button
               onPress={() => {
+                dispatch(
+                  batchDispatch(setTestType("english"), setCategory("non-prof"))
+                );
                 setModal(true);
               }}
               title="Non Professional Exam - English"
@@ -45,6 +55,9 @@ const Home = ({ navigation }: any) => {
             />
             <Button
               onPress={() => {
+                dispatch(
+                  batchDispatch(setTestType("tagalog"), setCategory("non-prof"))
+                );
                 setModal(true);
               }}
               title="Non Professional Exam - Tagalog"
@@ -81,21 +94,26 @@ const Home = ({ navigation }: any) => {
       >
         <Text style={st.modalHeading}>Number of Questions:</Text>
         <ButtonGroup btnData={btnGroupData} />
-        <View style={{marginTop: 50}}>
+        <View style={{ marginTop: 50 }}>
           <Button
             onPress={() => {
-              console.log('review')
+              console.log("review");
             }}
             title="Review"
-            style={{marginBottom: 10}}
-            bgColor='#4779c7'
+            style={{ marginBottom: 10 }}
+            bgColor="#4779c7"
+            icon={<Icon name="eye" style={{ fontSize: 18, marginLeft: 10 }} />}
           />
           <Button
             onPress={() => {
-              console.log('Take Exam')
+              dispatch(startExam());
+              navigation.navigate("Exam");
             }}
-            bgColor='green'
+            bgColor="green"
             title="Take Exam"
+            icon={
+              <Icon name="check" style={{ fontSize: 18, marginLeft: 10 }} />
+            }
           />
         </View>
       </Dialog>

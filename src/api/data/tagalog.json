@@ -1,0 +1,16 @@
+{
+  "non-prof": [
+    {
+      "id": 1,
+      "question": "sino at ano",
+      "choices": ["ans1", "ans2", "ans3", "ans4"],
+      "correct": "ans3"
+    },
+    {
+      "id": 2,
+      "question": "ano at sino",
+      "choices": ["ans1", "ans2", "ans3", "ans4"],
+      "correct": "ans1"
+    }
+  ]
+}

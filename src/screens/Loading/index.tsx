@@ -1,11 +1,23 @@
 import {View, Text, Image, StyleSheet} from 'react-native';
 import React, {useEffect} from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import {screenState, startApp} from '../../store/reducers/screenReducer'
 
 const Loading = (props: any) => {
+
+  const dispatch = useDispatch();
+  const isStarted = useSelector(screenState);
+
   useEffect(() => {
-    setTimeout(() => {
+    if (isStarted) {
       props.navigation.navigate('Home');
-    }, 4000);
+    }
+    else{
+      setTimeout(() => {
+        dispatch(startApp(true));
+        props.navigation.navigate('Home');
+      }, 4000);
+    }
   }, []);
 
   return (

@@ -1,0 +1,16 @@
+{
+  "non-prof": [
+    {
+      "id": 1,
+      "question": "A person who drives while under influence of alcohol or drugs is punishable by law with:",
+      "choices": ["ans1", "ans2", "ans3", "ans4"],
+      "correct": "ans1"
+    },
+    {
+      "id": 2,
+      "question": "A person who drives while under influence of alcohol or drugs is punishable by law with22:",
+      "choices": ["ans1", "ans2", "ans3", "ans4"],
+      "correct": "ans2"
+    }
+  ]
+}

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
-import { act } from "react-test-renderer";
 import { Button } from "../";
 
 interface btnType {
@@ -24,25 +23,19 @@ const ButtonGroup: React.FC<IProps> = ({ btnData }) => {
 
   const btnWidth = btnData ? 100 / btnData?.length - 1 + "%" : "100%";
 
-  
-
   return (
     <View style={st.viewStyle}>
       {btnData?.map((dta, i: number) => {
-
-      const isActive = active === i;
+        const isActive = active === i;
 
         return (
           <Button
             key={i}
-            style={[
-              { width: btnWidth },
-              { borderRadius: 0 },
-            ]}
-            textStyle= {isActive ? st.activeStyle : {}}
+            style={[{ width: btnWidth }, { borderRadius: 0 }]}
+            textStyle={isActive ? st.activeStyle : {}}
             title={dta.title}
             onPress={() => onPressHandler(i)}
-            bgColor= {isActive ? '#4779c7' : ''}
+            bgColor={isActive ? "#4779c7" : ""}
           />
         );
       })}
@@ -59,7 +52,7 @@ const st = StyleSheet.create({
     justifyContent: "space-between",
   },
   activeStyle: {
-    fontWeight: 'bold'
+    fontWeight: "bold",
   },
 });
 

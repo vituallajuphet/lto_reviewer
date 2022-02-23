@@ -2,11 +2,14 @@ import React, {useState} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Loading, Home, OptionScreen, ExamScreen} from '../screens/';
+import { startApp, screenState } from "../store/reducers/screenReducer";
+import { useSelector, useDispatch } from 'react-redux';
 
 const Stack = createNativeStackNavigator();
 
 const Routes = () => {
-  const [isStarted, setStart] = useState(false);
+  const isStarted = useSelector(screenState);
+  const dispatch = useDispatch();
 
   return (
     <NavigationContainer>
