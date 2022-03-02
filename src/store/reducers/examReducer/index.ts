@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { getExamData } from "../../../api";
 import { examAction } from "./reducerActions";
 
 export const examReducer = createSlice({
@@ -24,6 +25,13 @@ export const {
   setTestType,
   startExam,
 } = examReducer.actions;
+
+export const asyncSetQuestion = (params: any) => (dispatch: any) => {
+  const exmdata = getExamData(40, "english", "non-prof");
+  console.log(exmdata, "ss");
+
+  return dispatch(setQuestion(exmdata));
+};
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of

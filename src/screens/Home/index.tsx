@@ -1,17 +1,18 @@
 import { Image, Text, View, ScrollView } from "react-native";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Button, ButtonGroup, Container, Dialog } from "../../components";
 import { st } from "./style";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  getExamState,
+  asyncSetQuestion,
   setCategory,
   setNumberOfItems,
   setTestType,
   startExam,
 } from "../../store/reducers/examReducer";
 import { batchDispatch } from "../../utils";
+// import { batchDispatch } from "../../utils";
 
 interface IGroupBtnProps {
   title: string;
@@ -46,7 +47,10 @@ const Home = ({ navigation }: any) => {
             <Button
               onPress={() => {
                 dispatch(
-                  batchDispatch(setTestType("english"), setCategory("non-prof"))
+                  batchDispatch([
+                    setTestType("english"),
+                    setCategory("non-prof"),
+                  ])
                 );
                 setModal(true);
               }}
@@ -56,7 +60,10 @@ const Home = ({ navigation }: any) => {
             <Button
               onPress={() => {
                 dispatch(
-                  batchDispatch(setTestType("tagalog"), setCategory("non-prof"))
+                  batchDispatch([
+                    setTestType("tagalog"),
+                    setCategory("non-prof"),
+                  ])
                 );
                 setModal(true);
               }}
@@ -106,7 +113,9 @@ const Home = ({ navigation }: any) => {
           />
           <Button
             onPress={() => {
-              dispatch(startExam());
+              // batchDispatch(asyncSetQuestion("test"));
+              // dispatch(asyncSetQuestion("test"));
+              dispatch(batchDispatch([asyncSetQuestion("test"), startExam()]));
               navigation.navigate("Exam");
             }}
             bgColor="green"

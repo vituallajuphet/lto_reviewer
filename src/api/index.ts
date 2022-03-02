@@ -8,10 +8,12 @@ export const getExamData = (
 ) => {
   switch (language) {
     case "english":
-      return eng[category].slice(0, examNumber + 1);
+      return sortArr(eng[category].slice(0, examNumber + 1));
     case "tagalog":
-      return tag[category].slice(0, examNumber + 1);
+      return sortArr(tag[category].slice(0, examNumber + 1));
     default:
       return [];
   }
 };
+
+const sortArr = (arr: any[]) => arr.sort((a, b) => 0.5 - Math.random());

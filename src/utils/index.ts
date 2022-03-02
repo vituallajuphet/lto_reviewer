@@ -1,4 +1,3 @@
-import { Dispatch } from "@reduxjs/toolkit";
 import { ViewStyle } from "react-native";
 import { batch } from "react-redux";
 
@@ -8,10 +7,10 @@ export const getStyles = (...obj: ViewStyle[]): ViewStyle => {
   });
 };
 
-export const batchDispatch =
-  (...args: Dispatch[]) =>
-  (dispatch: Dispatch) => {
-    batch(() => {
-      args.map((arg: any) => dispatch(arg));
+export const batchDispatch = (params: any[]) => (dispatch: any) => {
+  batch(() => {
+    params.map((i) => {
+      dispatch(i);
     });
-  };
+  });
+};

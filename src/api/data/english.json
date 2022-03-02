@@ -2,15 +2,91 @@
   "non-prof": [
     {
       "id": 1,
-      "question": "A person who drives while under influence of alcohol or drugs is punishable by law with:",
-      "choices": ["ans1", "ans2", "ans3", "ans4"],
-      "correct": "ans1"
+      "question": "While driving, you should look at your side and rear view mirror:",
+      "choices": [
+        "Quickly",
+        "If you want",
+        "Not less than once per one minute"
+      ],
+      "correct": "Quickly"
     },
     {
       "id": 2,
-      "question": "A person who drives while under influence of alcohol or drugs is punishable by law with22:",
-      "choices": ["ans1", "ans2", "ans3", "ans4"],
-      "correct": "ans2"
+      "question": "You can overtake in the right side of your vehicle if:",
+      "choices": [
+        "The road has two or more lanes going in one direction",
+        "The road is two-way",
+        "The sidewalk is wide"
+      ],
+      "correct": "The road has two or more lanes going in one direction"
+    },
+    {
+      "id": 3,
+      "question": "A person who drives while under influence of alcohol or drugs is punishable by law with:",
+      "choices": [
+        "Suspension of license",
+        "All answers are correct",
+        "Fines and imprisonment"
+      ],
+      "correct": "All answers are correct"
+    },
+    {
+      "id": 4,
+      "question": "Before leaving the parking area, you should: ",
+      "choices": ["Look around first", "Sound your horn ", "Immediately go "],
+      "correct": "Look around first"
+    },
+    {
+      "id": 5,
+      "question": "The minimum age in the application for Non-Professional Driver’s License is: ",
+      "choices": ["18 years old", "16 years old", "17 years old"],
+      "correct": "17 years old"
+    },
+    {
+      "id": 6,
+      "question": "After overtaking, you want to safely go back to the lane where you where you came from, you should",
+      "choices": [
+        "Use the rear view mirror to check the vehicle you have overtaken",
+        "Look at the vehicle you have overtaken by turning your head",
+        "Stop"
+      ],
+      "correct": "Use the rear view mirror to check the vehicle you have overtaken"
+    },
+    {
+      "id": 7,
+      "question": "Obtaining a driver’s license is:",
+      "choices": ["An honor", "A privilege", "A right"],
+      "correct": "A privilege"
+    },
+    {
+      "id": 8,
+      "question": "In an intersection with a STOP sign, you should:",
+      "choices": [
+        "Slow down and proceed if there is no danger",
+        "Stop and proceed if there is no danger",
+        "Give way to vehicles going from left and right, proceed if there is no danger"
+      ],
+      "correct": "Stop and proceed if there is no danger"
+    },
+    {
+      "id": 9,
+      "question": "A Non-Professional driver’s license is suited for:",
+      "choices": [
+        "Private vehicles",
+        "Public utility vehicles",
+        "All types of vehicles"
+      ],
+      "correct": "Private vehicles"
+    },
+    {
+      "id": 10,
+      "question": "What should you prepare for a long trip?",
+      "choices": [
+        "Prepare the necessary tools that can be used to repair the vehicle",
+        "Plan your route and make sure the vehicle is running in good condition",
+        "All answers are correct"
+      ],
+      "correct": "All answers are correct"
     }
   ]
 }

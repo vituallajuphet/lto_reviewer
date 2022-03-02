@@ -1,18 +1,13 @@
-import { StyleProp, Text, TouchableOpacity, ViewProps, ViewStyle } from "react-native";
+import { StyleProp, ViewProps, ViewStyle } from "react-native";
 import { Modal, Portal, Provider } from "react-native-paper";
-import React, { Children, useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 interface ModalProps extends ViewProps {
   shown: boolean;
   children?: any;
   showHandler?: (hide: boolean) => void;
-
 }
-const Dialog: React.FC<ModalProps> = ({
-  children,
-  shown,
-  showHandler,
-}) => {
+const Dialog: React.FC<ModalProps> = ({ children, shown, showHandler }) => {
   const [visible, setVisible] = useState(false);
 
   const hideModal = () => {
@@ -31,6 +26,14 @@ const Dialog: React.FC<ModalProps> = ({
     minHeight: 200,
     paddingTop: 40,
     paddingBottom: 40,
+    width: "90%",
+    alignSelf: "center",
+  };
+
+  const modalStyle: StyleProp<ViewStyle> = {
+    height: "100%",
+    zIndex: 123123,
+    margin: 0,
   };
 
   return (
@@ -41,6 +44,7 @@ const Dialog: React.FC<ModalProps> = ({
             visible={visible}
             onDismiss={() => hideModal()}
             contentContainerStyle={containerStyle}
+            style={modalStyle}
           >
             {children}
           </Modal>

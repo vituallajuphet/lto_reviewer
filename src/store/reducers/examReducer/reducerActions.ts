@@ -11,7 +11,8 @@ const setTestType = (state, action) => {
 };
 
 const setQuestion = (state, action) => {
-  return { ...state, questions: action.payload };
+  console.log("from store", action.payload);
+  state.questions = action.payload;
 };
 
 const setCategory = (state, action) => {
